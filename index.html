@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vệ Sinh Giấc Ngủ – Cẩm Nang Y Khoa</title>
+  <meta name="description" content="10 nguyên tắc vệ sinh giấc ngủ giúp bạn ngủ ngon hơn, đủ giờ hơn và cảm thấy sảng khoái hơn khi thức dậy." />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0d1b3e;
+      --navy2:   #162244;
+      --blue:    #1a73e8;
+      --blue-lt: #4a9af5;
+      --teal:    #0ea5a0;
+      --accent:  #3b82f6;
+      --white:   #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100:#f1f5f9;
+      --gray-200:#e2e8f0;
+      --gray-600:#475569;
+      --gray-700:#334155;
+      --gray-900:#0f172a;
+      --red:     #ef4444;
+      --red-lt:  #fef2f2;
+      --red-border: #fca5a5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* ===== HERO HEADER ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 60%, #0f2a5a 100%);
+      color: var(--white);
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.15);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(14,165,160,0.12);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero h1 span { color: #60a5fa; }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #93c5fd;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #bfdbfe;
+      font-size: 1rem;
+    }
+
+    .hero-moon {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 20px rgba(96,165,250,0.5));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .hero-science {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.65rem 1.4rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+
+    .hero-science strong { color: #fde68a; font-size: 1.05rem; }
+
+    /* ===== NAV DOTS ===== */
+    .nav-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-strip a {
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2rem;
+      border: 1px solid var(--gray-200);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-strip a:hover {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0 1.75rem;
+    }
+
+    .section-number {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: 800;
+      color: var(--gray-900);
+    }
+
+    /* ===== CARDS ===== */
+    .cards { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem; }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-icon {
+      width: 2.75rem; height: 2.75rem;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    /* icon colours */
+    .icon-blue   { background: #eff6ff; }
+    .icon-indigo { background: #eef2ff; }
+    .icon-slate  { background: #f1f5f9; }
+    .icon-amber  { background: #fffbeb; }
+    .icon-red    { background: #fff1f2; }
+    .icon-purple { background: #faf5ff; }
+    .icon-green  { background: #f0fdf4; }
+    .icon-teal   { background: #f0fdfa; }
+    .icon-orange { background: #fff7ed; }
+    .icon-yellow { background: #fefce8; }
+
+    .card-body { flex: 1; }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.1rem 0.45rem;
+      border-radius: 0.4rem;
+    }
+
+    .card p { font-size: 0.92rem; color: var(--gray-600); }
+
+    /* ===== DEFINITION BOX ===== */
+    .definition-box {
+      background: var(--white);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .definition-box p { font-size: 1.02rem; color: var(--gray-700); }
+    .definition-box p strong { color: var(--gray-900); }
+
+    .science-badge {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #1e40af;
+    }
+
+    .science-badge strong { color: #1d4ed8; }
+
+    /* ===== DOCTOR NOTE ===== */
+    .doctor-note {
+      background: var(--red-lt);
+      border: 1.5px solid var(--red-border);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 3rem 0;
+    }
+
+    .doctor-note-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      color: #991b1b;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .doctor-note p { font-size: 0.95rem; color: #7f1d1d; line-height: 1.8; }
+    .doctor-note strong { color: #b91c1c; }
+
+    /* ===== REFERENCES ===== */
+    .references {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      padding: 2rem 0 1rem;
+      border-top: 1px solid var(--gray-200);
+      margin-top: 1rem;
+    }
+
+    .references span {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--gray-100);
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.82rem;
+      margin-top: 2rem;
+    }
+
+    footer strong { color: var(--white); }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: 0.5rem 0;
+    }
+
+    /* ===== SCROLL-TO-TOP ===== */
+    .scroll-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 2.8rem; height: 2.8rem;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 200;
+    }
+
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .hero { padding: 2.5rem 1rem 3rem; }
+      .card { flex-direction: column; gap: 0.75rem; }
+      .nav-strip a { font-size: 0.72rem; padding: 0.25rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <span class="hero-moon">🌙</span>
+  <div class="hero-badge">Cẩm Nang Y Khoa</div>
+  <h1>Vệ Sinh <span>Giấc Ngủ</span></h1>
+  <p class="hero-sub">Là Gì?</p>
+  <p>Tập hợp các thói quen và thực hành lành mạnh giúp bạn ngủ ngon hơn, đủ giờ hơn và cảm thấy sảng khoái hơn khi thức dậy.</p>
+  <div class="hero-science">
+    <span>🔬</span>
+    <span>Người trưởng thành cần <strong>7–9 giờ</strong> ngủ mỗi đêm</span>
+  </div>
+</header>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="nav-strip" aria-label="Điều hướng nhanh">
+  <a href="#dinh-nghia">Định nghĩa</a>
+  <a href="#nguyen-tac-1-5">Nguyên tắc 1–5</a>
+  <a href="#nguyen-tac-6-10">Nguyên tắc 6–10</a>
+  <a href="#luu-y">Lưu ý bác sĩ</a>
+</nav>
+
+<div class="container">
+
+  <!-- ===== ĐỊNH NGHĨA ===== -->
+  <section id="dinh-nghia" aria-label="Định nghĩa vệ sinh giấc ngủ">
+    <div class="definition-box">
+      <p><strong>Vệ sinh giấc ngủ</strong> là tập hợp các thói quen và thực hành lành mạnh giúp bạn ngủ ngon hơn, đủ giờ hơn và cảm thấy sảng khoái hơn khi thức dậy. Giống như vệ sinh cơ thể hằng ngày, vệ sinh giấc ngủ cần được thực hiện <strong>đều đặn và kiên trì</strong>.</p>
+      <div class="science-badge">
+        <span>✅</span>
+        <span><strong>Khoa học chứng minh:</strong> Người trưởng thành cần <strong>7–9 giờ</strong> ngủ mỗi đêm để duy trì sức khỏe thể chất và tâm thần tối ưu.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NGUYÊN TẮC 1–5 ===== -->
+  <section id="nguyen-tac-1-5" aria-label="Nguyên tắc vệ sinh giấc ngủ 1 đến 5">
+    <div class="section-header">
+      <div class="section-number">I</div>
+      <h2>10 Nguyên Tắc Vệ Sinh Giấc Ngủ (1–5)</h2>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-icon icon-blue">🕐</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">01</span>
+            Duy trì giờ ngủ và thức dậy cố định
+          </div>
+          <p>Đi ngủ và thức dậy vào cùng một giờ mỗi ngày — kể cả cuối tuần. Thói quen này giúp <strong>đồng hồ sinh học</strong> của bạn hoạt động ổn định.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-indigo">🛏️</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">02</span>
+            Chỉ dùng giường cho việc ngủ và quan hệ tình dục
+          </div>
+          <p>Không làm việc, xem TV hoặc dùng điện thoại trên giường. Não cần học cách liên kết <strong>giường = giấc ngủ</strong>.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-slate">🌙</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">03</span>
+            Tạo môi trường phòng ngủ lý tưởng
+          </div>
+          <p>Phòng tối, mát mẻ, yên tĩnh. Sử dụng <strong>rèm chắn sáng</strong>, nút tai hoặc máy tạo tiếng ồn trắng nếu cần.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-amber">☕</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">04</span>
+            Tránh caffeine sau 14:00
+          </div>
+          <p>Cà phê, trà, nước tăng lực, socola có thể gây mất ngủ nếu dùng sau buổi trưa. Tác dụng của caffeine kéo dài <strong>6–8 giờ</strong>.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-red">🚫</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">05</span>
+            Hạn chế rượu bia và thuốc lá
+          </div>
+          <p>Rượu làm bạn buồn ngủ nhưng <strong>phá vỡ cấu trúc giấc ngủ</strong>. Nicotine là chất kích thích làm khó ngủ và ngủ nông hơn.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== NGUYÊN TẮC 6–10 ===== -->
+  <section id="nguyen-tac-6-10" aria-label="Nguyên tắc vệ sinh giấc ngủ 6 đến 10">
+    <div class="section-header">
+      <div class="section-number">II</div>
+      <h2>10 Nguyên Tắc Vệ Sinh Giấc Ngủ (6–10)</h2>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-icon icon-purple">📵</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">06</span>
+            Không nhìn màn hình 1 giờ trước khi ngủ
+          </div>
+          <p>Ánh sáng xanh từ điện thoại, máy tính, TV ức chế <strong>melatonin</strong> — hormone điều hòa giấc ngủ. Thay bằng đọc sách, nghe nhạc nhẹ.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-green">🏃</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">07</span>
+            Tập thể dục đều đặn, nhưng không quá muộn
+          </div>
+          <p>Tập thể dục giúp ngủ sâu hơn, nhưng tránh tập mạnh trong vòng <strong>3 giờ trước khi ngủ</strong> vì có thể kích thích hệ thần kinh.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-teal">🧘</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">08</span>
+            Thư giãn trước khi ngủ
+          </div>
+          <p>Dành <strong>30–60 phút</strong> để thư giãn: tắm nước ấm, thiền, thở sâu, đọc sách nhẹ. Tạo nghi thức báo hiệu cho não rằng đã đến giờ ngủ.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-orange">🚶</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">09</span>
+            Không nằm trên giường khi không buồn ngủ
+          </div>
+          <p>Nếu sau <strong>20 phút</strong> vẫn chưa ngủ được, hãy ra khỏi giường và làm việc gì đó nhẹ nhàng, yên tĩnh cho đến khi buồn ngủ thật sự.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-yellow">☀️</div>
+        <div class="card-body">
+          <div class="card-title">
+            <span class="card-num">10</span>
+            Tránh ngủ ngày quá nhiều hoặc quá muộn
+          </div>
+          <p>Nếu cần ngủ trưa, chỉ nên ngủ <strong>20–30 phút trước 15:00</strong>. Ngủ ngày nhiều sẽ làm giảm áp lực ngủ vào ban đêm.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== LƯU Ý BÁC SĨ ===== -->
+  <section id="luu-y" aria-label="Lưu ý từ bác sĩ">
+    <div class="doctor-note">
+      <div class="doctor-note-title">
+        <span>⚠️</span>
+        <span>LƯU Ý QUAN TRỌNG TỪ BÁC SĨ</span>
+      </div>
+      <p>
+        Vệ sinh giấc ngủ là nền tảng nhưng <strong>KHÔNG thay thế điều trị y tế</strong>. Nếu mất ngủ kéo dài trên <strong>4 tuần</strong>, hãy thảo luận với bác sĩ về các phương pháp điều trị khác như <strong>CBT-I (Liệu pháp Nhận thức – Hành vi cho mất ngủ)</strong> — được khuyến cáo là <strong>điều trị đầu tay</strong> cho mất ngủ mạn tính.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== TÀI LIỆU THAM KHẢO ===== -->
+  <div class="references">
+    <strong>Tài liệu tham khảo:</strong>
+    <span>AASM Clinical Practice Guidelines 2021</span>
+    <span>PMC4400203</span>
+    <span>PMC9285041</span>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p><strong>Vệ Sinh Giấc Ngủ</strong> — Cẩm Nang Y Khoa</p>
+  <p style="margin-top:0.4rem;">Thông tin mang tính giáo dục sức khỏe, không thay thế tư vấn y tế chuyên khoa.</p>
+</footer>
+
+<!-- ===== SCROLL TO TOP ===== -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Lên đầu trang">↑</button>
+
+<script>
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 300);
+  });
+</script>
+
+</body>
+</html>
